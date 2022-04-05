@@ -24,6 +24,12 @@ PG (terminal: -> yarn add pg)
 7) instalei a biblioteca DOTENV, enviar as config do arquivo .env para comunicação com o banco de dados
 DotEnv (terminal: -> yarn add dotenv)
 
+8)Desenvolvimento da API
 inicia pelo controller -> service -> repository
+
+9)instalei o WSL2
 WSL2 -> utilizei para instalar o docker, pois suporta aplicações linux
 docker -> utilizei para instalar o container do kafka
+
+10) Instalei a biblioteca do kafkajs
+Kafkajs (Terminal -> yarn add kafkajs)
