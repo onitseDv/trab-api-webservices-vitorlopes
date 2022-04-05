@@ -9,10 +9,15 @@ const JogadorController = Router();
 
 //get
 JogadorController.get('', async (req, res) =>{
-    try{
-        res.json(await JogadorService.mostraTodosJogadores())
-    }catch(error){
-        res.status(500).json({error: 'JogadorService.mostraTodosJogadores() não tá funcionando'})
+    const existeJogador = await JogadorService.existeJogadores()
+    if(existeJogador){
+        try{
+            res.json(await JogadorService.mostraTodosJogadores())
+        }catch(error){
+            res.status(500).json({error: 'JogadorService.mostraTodosJogadores() não tá funcionando'})
+        }
+    }else{
+        res.status(404).json({error: 'Não existem jogadores no banco'})
     }
 });
 
@@ -38,14 +43,17 @@ JogadorController.get('/:id', async (req, res) =>{
 //post
 JogadorController.post('', async (req, res) =>{
     const {nome, data_de_nascimento, pais, time} = req.body
-    const existeTime = await TimeService.existeTimeById(time)
     if(!nome){ 
         return res.status(400).json({error: 'O nome do Jogador não pode ser vazio'})
     }else if(!data_de_nascimento){ 
         return res.status(400).json({error: 'A Data de nascimento do Jogador não pode ser vazio'})
     }else if(!pais){ 
         return res.status(400).json({error: 'O País do Jogador não pode ser vazio'})
-    }else if (!existeTime){
+    }else if (!time){
+        return res.status(404).json({error: `O time não pode ser vazio`})
+    }
+    const existeTime = await TimeService.existeTimeById(time)
+    if (!existeTime){
         return res.status(404).json({error: `O time de id: ${time} não foi encontrado ou não existe`})
     }
     try{

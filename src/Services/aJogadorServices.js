@@ -6,6 +6,14 @@ const mostraTodosJogadores = async () => {
     return await JogadorRepository.procuraTodosJogadores()
 }
 
+const existeJogadores = async () => {
+    const response = await JogadorRepository.procuraTodosJogadores()
+    if (response.length > 0)
+        return true
+    else
+        return false
+}
+
 const existeJogadorById = async (id) => {
     const response = await JogadorRepository.procuraJogadorById(id)
     return response ? true : false
@@ -27,4 +35,5 @@ const atualizaJogadorById = async ({id, nome, data_de_nascimento, pais, time}) =
     return await JogadorRepository.attJogadorById({id, nome, data_de_nascimento, pais, time})
 }
 
-module.exports = {mostraTodosJogadores, existeJogadorById, mostraJogadorById, armazenaJogador, apagaJogadorById, atualizaJogadorById};
+module.exports = {mostraTodosJogadores, existeJogadores, existeJogadorById, 
+    mostraJogadorById, armazenaJogador, apagaJogadorById, atualizaJogadorById};

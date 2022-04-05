@@ -1,0 +1,29 @@
+1) Para iniciar a API, digitar o comando: 
+Terminal -> npm init
+
+2) Instalar YARN (gerenciador de dependencias)
+Yarn: terminal -> npm install -g yarn
+
+3) Instalar EXPRESS (framework - possui sistemas de de grenciamento de rotas completas) 
+Express: terminal -> yarn add express
+
+4) Instalar NODEMON (att server sem precisar reinicializá-lo)
+Nodemon (teminal -> yarn global add nodemon)
+
+OBS: após a instalação do nodemon, tem que atualizar a parte de "scripts" dentro do arquivo 'package.json'
+Deve adicionar a seguinte linha logo abaixo do "scripts", inclusive com a vírgula: 
+"start": "nodemon ./index.js", 
+após isso, só executar o comando: 'yarn start'
+
+5) instalei a biblioteca AXIOS (http) 
+Axios (terminal: -> yarn add axios)
+
+6) instalei a biblioteca PG, biblioteca de comunicação com o postgrees 
+PG (terminal: -> yarn add pg)
+
+7) instalei a biblioteca DOTENV, enviar as config do arquivo .env para comunicação com o banco de dados
+DotEnv (terminal: -> yarn add dotenv)
+
+inicia pelo controller -> service -> repository
+WSL2 -> utilizei para instalar o docker, pois suporta aplicações linux
+docker -> utilizei para instalar o container do kafka

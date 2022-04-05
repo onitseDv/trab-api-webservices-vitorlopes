@@ -1,0 +1,102 @@
+//comando entrar no bd pelo shell do windows
+ \c postgresql_db
+ 
+ 
+//pra testar// 
+drop table transferencias;
+drop table times;
+drop table jogadores;
+drop table torneios;
+drop table partidas;
+drop table eventos;
+ 
+create table times(
+	id serial primary key,
+	nome text not null,
+	localidade text
+);
+
+create table transferencias(
+	id serial primary key,
+	time_origem integer not null,
+	time_destino integer not null,
+	id_jogador integer not null,
+	data date,
+	valor real
+);
+
+create table jogadores(
+	id serial primary key,
+	nome text not null,
+	data_de_nascimento date not null,
+	pais text not null,
+	time integer
+);
+
+create table torneios(
+	id_torneio serial primary key,
+	nome_torneio text not null
+);
+
+create table partidas(
+	id_partida serial primary key,
+	id_torneio integer not null,
+	id_time1 integer not null,
+	id_time2 integer not null
+);
+
+create table eventos(
+	id_evento serial primary key,
+	id_partida integer,
+	descricao_evento text not null
+);
+
+insert into times (
+	nome,localidade
+) values 
+	('Sport', 'Brasil'),
+	('Barcelona', 'Espanha'),
+	('Roma', 'Italia'),
+	('Manchester United', 'Inglaterra'
+);
+
+insert into jogadores (
+	nome,data_de_nascimento,pais,time
+) values 
+	('Joao da Silva', TO_DATE('1998/02/19', 'YYYY/MM/DD'), 'Brasil', null),
+	('Marcos Geraldo', TO_DATE('1990/05/11', 'YYYY/MM/DD'), 'Brasil', 2),
+	('Alex Kidd', TO_DATE('1986/07/14', 'YYYY/MM/DD'), 'Estados Unidos', 1),
+	('Jun Yun Sui', TO_DATE('1997/01/01', 'YYYY/MM/DD'), 'China', 3),
+	('Mohamed Salim', TO_DATE('1985/09/25', 'YYYY/MM/DD'), 'Egito', 4),
+	('Humberto Doisberto', TO_DATE('1989/02/07', 'YYYY/MM/DD'), 'Paraguai', 4),
+	('Bart Simpson', TO_DATE('1980/05/01', 'YYYY/MM/DD'), 'Estados Unidos', 4),
+	('Principe Ouro Negro', TO_DATE('1988/09/10', 'YYYY/MM/DD'), 'Angola', 2
+);
+	
+insert into transferencias (
+	time_origem,time_destino,id_jogador,data,valor
+) values 
+	(1, 2, 3, current_date, 45000.09
+);
+	
+insert into torneios (
+	nome_torneio
+) values (
+	'Torneio BombaPatch'),(
+	'Campeonato de Varzea' 
+);
+
+insert into partidas(
+	id_torneio, id_time1, id_time2
+)values
+	(2,1,2),
+	(2,1,3),
+	(2,1,4),
+	(1,3,4
+);
+	
+insert into eventos(
+	id_partida,descricao_evento
+)values
+	(1, 'Inicio'
+);

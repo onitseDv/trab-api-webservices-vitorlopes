@@ -24,7 +24,7 @@ PartidaController.get('', async (req, res) =>{
 //get by id
 PartidaController.get('/:id', async (req, res) =>{
     const {id} = req.params
-    console.log()
+    //console.log()
     try{
         const existePartida = await PartidaService.existePartidaById(id)
         if (existePartida){

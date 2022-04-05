@@ -8,10 +8,15 @@ const TimeController = Router();
 
 //get
 TimeController.get('', async (req, res) =>{
-    try{
-        res.json(await TimeService.mostraTodosTimes())
-    }catch(error){
-        res.status(500).json({error: 'TimeService.mostraTodosTimes() não tá funcionando'})
+    const existeTime = await TimeService.existeTimes()
+    if(existeTime){
+        try{
+            res.json(await TimeService.mostraTodosTimes())
+        }catch(error){
+            res.status(500).json({error: 'TimeService.mostraTodosTimes() não tá funcionando'})
+        }
+    }else{
+        res.status(404).json({error: 'Não existem times no banco'})
     }
 });
 

@@ -6,6 +6,14 @@ const mostraTodosTimes = async () => {
     return await TimeRepository.procuraTodosTimes()
 }
 
+const existeTimes = async () => {
+    const response = await TimeRepository.procuraTodosTimes()
+    if (response.length > 0)
+        return true
+    else
+        return false
+}
+
 const existeTimeById = async (id) => {
     const response = await TimeRepository.procuraTimeById(id)
     return response ? true : false
@@ -37,4 +45,5 @@ const exibeJogadoresPorTimeById = async (id) => {
 }
 
 
-module.exports = {mostraTodosTimes, existeTimeById, mostraTimeById, armazenaTime, apagaTimeById, atualizaTimeById, existeJogadorNoTimeById, exibeJogadoresPorTimeById};
+module.exports = {mostraTodosTimes, existeTimes, existeTimeById, mostraTimeById, 
+    armazenaTime, apagaTimeById, atualizaTimeById, existeJogadorNoTimeById, exibeJogadoresPorTimeById};
