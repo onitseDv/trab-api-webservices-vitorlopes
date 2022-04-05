@@ -4,6 +4,7 @@ const {Router} = require ('express');
 
 const EventoService = require ('../Services/aEventoServices');
 const PartidaService = require ('../Services/aPartidaServices');
+//const EventoProducer = require ( '../Producer/aEventoProducer');
 const EventoController = Router();
 
 
@@ -56,6 +57,7 @@ EventoController.post('', async (req, res) =>{
         return res.status(404).json({error: `O evento: ${descricao_evento} é incorreto`})
     }
     try{
+        //EventoProducer.enviaMsgKafka(descricao_evento)
         res.status(201).json(await EventoService.armazenaEvento({id_partida,descricao_evento}))
     }catch(error){
         res.status(500).json({error: 'EventoService.armazenaEvento() não tá funcionando'})
