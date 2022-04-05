@@ -31,6 +31,7 @@ const existeEventoByDescricao = (descricao) => {
     ];
     for(let cont of eventos){
         if(cont.descricao === descricao){
+            
             return true
        }
    }

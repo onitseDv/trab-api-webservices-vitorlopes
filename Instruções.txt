@@ -33,3 +33,5 @@ docker -> utilizei para instalar o container do kafka
 
 10) Instalei a biblioteca do kafkajs
 Kafkajs (Terminal -> yarn add kafkajs)
+configurar o docker-compose.yml antes de subir o docker
+comando para subir o kafka: docker-compose up -d
