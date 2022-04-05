@@ -6,6 +6,7 @@ const EventoService = require ('../Services/aEventoServices');
 const PartidaService = require ('../Services/aPartidaServices');
 //const EventoProducer = require ( '../Producer/aEventoProducer');
 const EventoController = Router();
+const EventoProducer = require ( '../Producer/aEventoProducer');
 
 
 //get
@@ -22,7 +23,7 @@ EventoController.get('', async (req, res) =>{
     } 
 });
 
-//get by id
+//get by id 
 EventoController.get('/:id', async (req, res) =>{
     const {id} = req.params
     try{
@@ -59,6 +60,7 @@ EventoController.post('', async (req, res) =>{
     try{
         //EventoProducer.enviaMsgKafka(descricao_evento)
         res.status(201).json(await EventoService.armazenaEvento({id_partida,descricao_evento}))
+        EventoProducer.enviaMsgKafka(descricao_evento)
     }catch(error){
         res.status(500).json({error: 'EventoService.armazenaEvento() não tá funcionando'})
     }
