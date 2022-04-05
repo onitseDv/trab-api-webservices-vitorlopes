@@ -1,9 +1,9 @@
 //producer para enviar as mensagens
-import { Kafka } from 'kafkajs';
+const { Kafka } = require('kafkajs');
 
 const topic = 'kafka1';
 const kafka = new Kafka({
-    brokers: ['localhost:9091'],
+    brokers: ['localhost:9092'],
     clientId: 'certificate',
 })
 
