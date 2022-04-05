@@ -19,6 +19,6 @@ const enviaMsgKafka = async (message) => {
     })
 };
 
-//await producer.disconnect()
+//await producer.disconnect() 
 
 module.exports = enviaMsgKafka;
