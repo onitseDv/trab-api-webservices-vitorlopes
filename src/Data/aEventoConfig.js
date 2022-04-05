@@ -19,18 +19,15 @@ async function run() {
             const prefix = `${topic}[${partition} | ${message.offset}] / ${message.timestamp}`
             console.log(`- ${prefix} ${message.key}#${message.value}`)
 
-      const payload = JSON.parse(message.value);
+            const payload = JSON.parse(message.value);
 
-      // setTimeout(() => {
-      producer.send({
-        topic: 'certification-response',
-        messages: [
-          { value: `Certificado do usuário ${payload.user.name} do curso ${payload.course} gerado!` }
-        ]
-      })
-      // }, 3000);
-    },
-  })
+            // setTimeout(() => {
+            producer.send({
+                topic: 'certification-response',
+                messages: [{ value: `Certificado do usuário ${payload.user.name} do curso ${payload.course} gerado!` }]
+            })
+        },
+    })
 }
 
 run().catch(console.error)
