@@ -1,11 +1,11 @@
 1) Para iniciar a API, digitar o comando: 
-Terminal -> npm init
+(Terminal: -> npm init)
 
 2) Instalar YARN (gerenciador de dependencias)
-Yarn: terminal -> npm install -g yarn
+Yarn (terminal: -> npm install -g yarn)
 
 3) Instalar EXPRESS (framework - possui sistemas de de grenciamento de rotas completas) 
-Express: terminal -> yarn add express
+Express (terminal: -> yarn add express)
 
 4) Instalar NODEMON (att server sem precisar reinicializá-lo)
 Nodemon (teminal -> yarn global add nodemon)
