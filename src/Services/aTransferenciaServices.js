@@ -1,4 +1,4 @@
-//repository de Transferencias
+//Services de Transferencias
 
 const TransferenciaRepository = require('../Repositories/aTransferenciaRepository')
 

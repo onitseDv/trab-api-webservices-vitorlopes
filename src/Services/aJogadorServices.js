@@ -1,4 +1,4 @@
-//repository de JOGADORES
+//Services de JOGADORES
 
 const JogadorRepository = require('../Repositories/aJogadorRepository')
 

@@ -1,4 +1,5 @@
 //controller para Autenticação
+//vai gerar o jwt necessário para autenticar na aplicação
 
 const {Router} = require ('express');
 const AutenticacaoController = Router();
@@ -22,17 +23,4 @@ AutenticacaoController.post('',  (req, res) =>{
     return res.status(401).json({error: 'Usuário não autenticado!'})
 });
 
-function verificaJWT ( req, res){
-    const token = req.headers ['x-access-token'];
-    jwt.verify(token, SECRET, (err, decoded) =>{
-        if(err){
-            return res.status(401).json({error: 'Usuário não autenticado!'})
-        }
-        req.userId = decoded.userId;
-        next();
-    })
-}
-
-
-
-module.exports = AutenticacaoController, verificaJWT;
+module.exports = AutenticacaoController;

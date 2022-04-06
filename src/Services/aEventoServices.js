@@ -1,4 +1,4 @@
-//repository de Eventos
+//Services de Eventos
 
 const EventoRepository = require('../Repositories/aEventoRepository')
 

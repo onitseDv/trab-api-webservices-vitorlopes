@@ -1,4 +1,4 @@
-//repository de TIMES
+//Services de TIMES
 
 const TimeRepository = require('../Repositories/aTimeRepository')
 

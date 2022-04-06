@@ -1,4 +1,4 @@
-//repository de TORNEIOS
+//Services de TORNEIOS
 
 const TorneioRepository = require('../Repositories/aTorneioRepository')
 

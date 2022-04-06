@@ -1,4 +1,4 @@
-//repository de Jogos (Partidas)
+//Services de Jogos (Partidas)
 
 const PartidaRepository = require('../Repositories/aPartidaRepository')
 
