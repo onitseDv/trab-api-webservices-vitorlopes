@@ -5,9 +5,10 @@ const {Router} = require ('express');
 const JogadorService = require ('../Services/aJogadorServices');
 const TimeService = require ('../Services/aTimeServices');
 const JogadorController = Router();
-
+const AuthController = require ('./aAutenticacaoController');
 
 //get
+//JogadorController.get('', AuthController.verificaJWT,   async (req, res) =>{
 JogadorController.get('', async (req, res) =>{
     const existeJogador = await JogadorService.existeJogadores()
     if(existeJogador){

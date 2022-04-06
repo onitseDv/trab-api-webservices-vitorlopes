@@ -6,6 +6,7 @@ const TransferenciaController = require('../controllers/aTransferenciaController
 const TorneioController = require('../controllers/aTorneioController');
 const PartidaController = require('../controllers/aPartidaController');
 const EventoController = require('../controllers/aEventoController');
+const AutenticacaoController = require('../controllers/aAutenticacaoController');
 
 const controllers = express.Router();
 
@@ -15,5 +16,6 @@ controllers.use('/transferencias', TransferenciaController);
 controllers.use('/torneios', TorneioController);
 controllers.use('/partidas', PartidaController);
 controllers.use('/eventos', EventoController);
+controllers.use('/login', AutenticacaoController);
 
 module.exports = controllers; 

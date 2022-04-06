@@ -35,3 +35,8 @@ docker -> utilizei para instalar o container do kafka
 Kafkajs (Terminal -> yarn add kafkajs)
 configurar o docker-compose.yml antes de subir o docker
 comando para subir o kafka: docker-compose up -d
+
+11) Após a configuração correta do kafka, desenvolvi o producer, para enviar as mensagens a serem capturadas pelo kafka
+
+12) Instalei a biblioteca JWT, para desenvolvimento do módulo de autenticação (segurança)
+JWT (Terminal -> npm i jsonwebtoken dotenv-safe)
